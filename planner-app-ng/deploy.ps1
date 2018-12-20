@@ -1,10 +1,10 @@
 param (
 
-    [string]$fireBaseToken,
+    [string]$firebaseToken,
 
-    [string]$fireBaseProject,
+    [string]$firebaseProject,
 
-    [string]$releaseMessage
+    [string]$buildNumber
 
 )
 
@@ -19,7 +19,7 @@ write-host "starting deploy...";
 
 firebase --version;
 
-firebase deploy --token $fireBaseToken --project $fireBaseProject --message "Release: $releaseMessage";
+firebase deploy --token $firebaseToken --project $firebaseProject --message "Build: $buildNumber";
 
 write-host "deployment completed";
 
